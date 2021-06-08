@@ -623,4 +623,4 @@ async def throw(ctx):
 
 
 
-client.run("ODUwMDUyMDI0MzcxOTA0NTEy.YLkGow.Tkdet4ZRf3CZRmBdFrjqBXTVuKw")
+client.run("")
