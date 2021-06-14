@@ -696,4 +696,4 @@ async def translate(ctx, lang_to, *args):
     text_translated = translator.translate(text, dest=lang_to).text
     await ctx.send(text_translated)
 
-client.run("ODUwMDUyMDI0MzcxOTA0NTEy.YLkGow.pQYB-19XIPHaF57qDwk2NM-WIVw")
+client.run("")
