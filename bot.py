@@ -21,7 +21,7 @@ white = 0xeeffee
 
 @client.event
 async def on_ready():
-    await client.change_presence(status = discord.Status.online, activity = discord.Game("Cum Clicker"))
+    await client.change_presence(status = discord.Status.online, activity = discord.Game("Cum Clicker 1.0.0a"))
 
     clearer.start()
     
@@ -179,10 +179,10 @@ async def help(ctx, cmd : str = None):
         await ctx.message.delete()
         await ctx.send(embed = embed)
 
-@client.command(name = "wakeandrape", description = "Used to get the role Pre-Mature Cum.")
+@client.command(name = "wakeandrape", description = "Used to get the role Baby Boi.")
 async def wakeandrape(ctx):
     member = ctx.message.author
-    role = discord.utils.get(member.guild.roles, name = "Premature Cum")
+    role = discord.utils.get(member.guild.roles, name = "Baby Boi")
     if not role in member.roles:
         await member.add_roles(role)
 
@@ -214,23 +214,21 @@ async def clear(ctx, amount = 2):
 @client.command(name = "kick", description = "Kick a user and specify a kick message that will show up in kick logs and DM them the message.", aliases = ["k"])
 @commands.has_permissions(kick_members = True)
 async def kick(ctx, member : discord.Member,*,reason = "No reason provided"):
-    guild = client.get_guild(850027913461366834)
-    kickchannel = guild.get_channel(852949450107912263)
-    memberembed = discord.Embed(title = "Kicked", description = f"You have been kicked from Cum Clicker\nreason: {reason}", colour = discord.Colour.red())
-    embed = discord.Embed(title = "Kicked", description = f"{member.mention} has been kicked from {ctx.guild.name}\nreason: {reason}", colour = discord.Colour.red())
-    await member.send(embed = memberembed)
-    await kickchannel.send(embed = embed)
+    actionschannel= client.get_guild(850027913461366834).get_channel(855770839958159381)
+    embed = discord.Embed(title = "Moderation: Kick", description = f"**Moderator:** {client.get_user(ctx.author.id)} ({ctx.author.id})\n**Offender:** {member} ({member.id})\n**Reason:** {reason}", colour = discord.Colour.red())
+    embed.set_footer(text = time.strftime("%d/%m/%Y"))
+    await member.send(embed = embed)
+    await actionschannel.send(embed = embed)
     await member.kick(reason = reason)
     
 @client.command(name = "ban", description = "Ban a user and specify a ban message that will show up in any audit/ban logs and DM them the message.", aliases = ["b"])
 @commands.has_permissions(ban_members = True)
 async def ban(ctx, member : discord.Member,*,reason = "No reason provided"):
-    guild = client.get_guild(850027913461366834)
-    banchannel = guild.get_channel(852949426132746310)
-    memberembed = discord.Embed(title = "Banned", description = f"You have been banned from Cum Clicker\nreason: {reason}", colour = discord.Colour.red())
-    embed = discord.Embed(title = "Banned", description = f"{member.mention} has been banned from {ctx.guild.name}\nreason: {reason}", colour = discord.Colour.red())  
-    await member.send(embed = memberembed)
-    await banchannel.send(embed = embed)
+    actionschannel= client.get_guild(850027913461366834).get_channel(855770839958159381)
+    embed = discord.Embed(title = "Moderation: Ban", description = f"**Moderator:** {client.get_user(ctx.author.id)} ({ctx.author.id})\n**Offender:** {member} ({member.id})\n**Reason:** {reason}", colour = discord.Colour.red())  
+    embed.set_footer(text = time.strftime("%d/%m/%Y"))
+    await member.send(embed = embed)
+    await actionschannel.send(embed = embed)
     await member.ban(reason = reason)
     
 @client.command(name = "unban", description = "Unbans a user from the server.", aliases=["ub"])
@@ -317,9 +315,9 @@ async def serverinfo(ctx):
     await ctx.send(embed = embed)
 
 reddit = praw.Reddit(client_id = "fFuv-xo1bLxRag",
-                     client_secret = "sukSTKNxYkDTIVlUxQRJbwfsVkLwpw",
+                     client_secret = "no",
                      username = "AtrixiumAlt",
-                     password = "Brooklyn1425",
+                     password = "no",
                      user_agent = "MemeBot")
 
 @client.command(name = "subreddit", description = ".", aliases = ["redditpost"])
